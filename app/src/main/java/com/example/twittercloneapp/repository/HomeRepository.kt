@@ -41,7 +41,7 @@ class HomeRepository@Inject constructor(
                 .addOnFailureListener { exception ->
                     Toast.makeText(
                             appContext.applicationContext,
-                            "Error getting documents. " + exception.message,
+                            "Erreur lors de la modification" + exception.message,
                             Toast.LENGTH_SHORT
                     ).show();
                     tweets.postValue(null)
@@ -66,7 +66,7 @@ class HomeRepository@Inject constructor(
                     .addOnFailureListener {
                         Toast.makeText(
                                 appContext.applicationContext,
-                                "Error adding tweet. " + it.message,
+                                "Erreur lors de l'ajout" + it.message,
                                 Toast.LENGTH_SHORT
                         ).show();
                     }
@@ -88,7 +88,7 @@ class HomeRepository@Inject constructor(
                     .addOnFailureListener {
                         Toast.makeText(
                                 appContext.applicationContext,
-                                "Error updating tweet. " + it.message,
+                                "Erreur lors de la modification" + it.message,
                                 Toast.LENGTH_SHORT
                         ).show();
                     }
@@ -104,7 +104,7 @@ class HomeRepository@Inject constructor(
             .addOnFailureListener {
                 Toast.makeText(
                     appContext.applicationContext,
-                    "Error updating tweet. " + it.message,
+                        "Erreur lors de la modification" + it.message,
                     Toast.LENGTH_SHORT
                 ).show();
             }
