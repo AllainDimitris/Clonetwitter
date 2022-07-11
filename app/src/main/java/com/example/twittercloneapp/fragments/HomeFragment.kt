@@ -44,7 +44,7 @@ class HomeFragment : Fragment(), OnAddTweetListener, TweetAdapterListener {
     }
 
     private fun initViews() {
-        showProgressBar("Loading...")
+        showProgressBar("Chargement...")
         rv_tweets.layoutManager = LinearLayoutManager(
             context,
             LinearLayoutManager.VERTICAL,
@@ -87,13 +87,13 @@ class HomeFragment : Fragment(), OnAddTweetListener, TweetAdapterListener {
 
     override fun onDeleteTweetTapped(tweet: Tweet) {
         AlertDialog.Builder(context)
-            .setTitle("Delete Tweet")
-            .setMessage("Are you sure you want to delete this tweet?")
-            .setPositiveButton("Yes") { dialog: DialogInterface, _: Int ->
+            .setTitle("Supprimer un tweet")
+            .setMessage("Voulez vous vraiment supprimer ce tweet ?")
+            .setPositiveButton("Oui") { dialog: DialogInterface, _: Int ->
                 tweet.id?.let { homeViewModel.deleteTweet(it) }
                 dialog.dismiss()
             }
-            .setNegativeButton("No") { dialog: DialogInterface, which: Int -> dialog.dismiss() }
+            .setNegativeButton("Non") { dialog: DialogInterface, which: Int -> dialog.dismiss() }
             .show()
     }
 

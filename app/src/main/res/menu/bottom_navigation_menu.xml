@@ -3,9 +3,9 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home"
-        android:title="Home" />
+        android:title="Accueil" />
     <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/ic_user_white"
-        android:title="Profile" />
+        android:title="Profil" />
 </menu>

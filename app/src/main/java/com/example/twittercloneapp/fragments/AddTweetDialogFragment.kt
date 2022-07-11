@@ -71,14 +71,14 @@ class AddTweetDialogFragment : DialogFragment() {
             it?.let {
                 if (it.toString().length > 280) {
                     context?.let { ctx -> etTweet.setTextColor(ctx.getColor(R.color.red)) }
-                    Toast.makeText(context, "You have crossed the maximum text limit is 280", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "La taille maximale d'un tweet est de 280 caractères", Toast.LENGTH_LONG).show()
                 } else {
                     context?.let { ctx -> etTweet.setTextColor(ctx.getColor(R.color.grey_dark)) }
                 }
             }
         }
         if (isForUpdate == true) {
-            btnAddTweet.text = "Update"
+            btnAddTweet.text = "Modifier"
             etTweet.setText(tweetString)
         }
         btnAddTweet.setOnClickListener {
@@ -89,7 +89,7 @@ class AddTweetDialogFragment : DialogFragment() {
                     listener?.onAddTweet(etTweet.text.toString())
                 }
             } else {
-                Toast.makeText(context, "Please enter the valid tweet", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Veuillez entrez un tweet valide de 280 caractères maximum", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
             dismiss()
